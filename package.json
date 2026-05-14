@@ -1,0 +1,17 @@
+{
+  "name": "namaste_react",
+  "version": "1.0.0",
+  "description": "Namaste React by Akshay Saini",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Dewmin",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  }
+}
