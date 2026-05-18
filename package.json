@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Namaste React by Akshay Saini",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "author": "Dewmin",
@@ -13,5 +15,8 @@
   "dependencies": {
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
-  }
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }

@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-const heading = React.createElement("h1", { id: "header" }, "Hello World from React");
+import AppLayOut from "./components/AppLayOut";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(heading);
+root.render(<AppLayOut />);
