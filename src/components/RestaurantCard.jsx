@@ -1,13 +1,16 @@
+import { COMMON_RES_IMG_URL } from "../utils/constants"
+
 const RestaurantCard = (props) => {
     const { resData } = props
-    const { imgUrl, resName, categories, rating, delivery } = resData
+    const { name, cuisines, avgRating, sla, costForTwo } = resData.info
     return (
         <div className="res-card" style={{ backgroundColor: "#efe9e9" }}>
-            <img className="res-img" src={imgUrl} alt="res-img" />
-            <h3>{resName}</h3>
-            <h4>{categories}</h4>
-            <h4>{rating}</h4>
-            <h4>{delivery}</h4>
+            <img className="res-img" src={COMMON_RES_IMG_URL} alt="res-img" />
+            <h3>{name}</h3>
+            <h4>{cuisines.join(", ")}</h4>
+            <h4>{avgRating} stars</h4>
+            <h4>{sla.deliveryTime} minutes</h4>
+            <h4>{costForTwo} </h4>
         </div>
     )
 }
