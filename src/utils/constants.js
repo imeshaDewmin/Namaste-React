@@ -2,3 +2,8 @@ export const LOGO_URL = "https://img.magnific.com/premium-vector/restaurant-logo
 
 export const COMMON_RES_IMG_URL =
     "https://static.vecteezy.com/system/resources/thumbnails/049/237/459/small/restaurant-cafe-front-flat-style-illustration-building-exterior-vector.jpg";
+
+
+export const RESTAURANT_LIST = "https://namastedev.com/api/v1/listRestaurants"
+
+export const RESTAURANT_MENU_INFO = "https://namastedev.com/api/v1/listRestaurantMenu"

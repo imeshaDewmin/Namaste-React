@@ -71,3 +71,17 @@
 .search {
   margin: 10px;
 }
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-item > li {
+  list-style-type: none;
+}
+
+.res-card-link {
+  text-decoration: none;
+  color: black;
+}
