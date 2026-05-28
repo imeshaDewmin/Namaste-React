@@ -22,11 +22,14 @@ const User = () => {
     const { name, location, url, avatar_url } = user
 
     return (
-        <div className="user-card">
-            <img src={avatar_url} />
-            <h2>Name: {name}</h2>
-            <h2>Location: {location}</h2>
-            <h2>Git: {url}</h2>
+        <div className=" bg-white shadow-md rounded-xl p-5 w-92 text-center">
+            <img
+                src={avatar_url}
+                className="w-24 h-24 rounded-full mx-auto mb-4"
+            />
+            <h2 className="text-lg font-semibold">Name: {name}</h2>
+            <h2 className="text-gray-600">Location: {location}</h2>
+            <h2 className="text-gray-600">Git: {url}</h2>
         </div>
     )
 }

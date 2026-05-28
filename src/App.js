@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RestaurantMenu from "./pages/RestaurantMenu";
 import { Suspense } from "react";
 import ShimmerUI from "./components/ShimmerUI";
+import Cart from "./components/Cart";
 
 const Grocery = lazy(() => import("./components/Grocery"))
 
@@ -28,6 +29,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/contact",
                 element: <Contact />
+            },
+            {
+                path: "/cart",
+                element: <Cart />
             },
             {
                 path: "/grocery",

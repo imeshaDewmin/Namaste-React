@@ -14,19 +14,19 @@ const Header = () => {
     }
 
     return (
-        <div className="header">
+        <div className="flex justify-between border-2 h-32 m-1.5">
             <div className="logo-container">
-                <img className="logo" src={LOGO_URL} alt="logo" />
+                <img className="w-30" src={LOGO_URL} alt="logo" />
             </div>
-            <div className="nav-items">
-                <ul className="nav-items">
-                    <li>Online Status: {onlineStatus ? "🟢" : "🔴"} </li>
-                    <li><Link to="/" className="nav-link">Home</Link></li>
-                    <li ><Link to="/about" className="nav-link">About</Link></li>
-                    <li><Link to="/contact" className="nav-link">Contact</Link></li>
-                    <li ><Link to="/cart" className="nav-link">Cart</Link></li>
-                    <li ><Link to="/grocery" className="nav-link">Grocery</Link></li>
-                    <button className="login-btn" onClick={handleButtonClick}>{BtnName}</button>
+            <div className="flex justify-center p-4 m-4">
+                <ul className="flex p-4 m-1">
+                    <li className="px-4 ">Online Status: {onlineStatus ? "🟢" : "🔴"} </li>
+                    <li ><Link to="/" className="px-4 ">Home</Link></li>
+                    <li ><Link to="/about" className="px-4 ">About</Link></li>
+                    <li><Link to="/contact" className="px-4 ">Contact</Link></li>
+                    <li ><Link to="/cart" className="px-4 ">Cart</Link></li>
+                    <li ><Link to="/grocery" className="px-4 ">Grocery</Link></li>
+                    <li><button className="px-4 font-semibold hover:text-orange-600 transition-colors cursor-pointer" onClick={handleButtonClick}>{BtnName}</button></li>
                 </ul>
             </div>
         </div>

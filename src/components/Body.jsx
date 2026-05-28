@@ -30,21 +30,26 @@ const Body = () => {
         <ShimmerUI />
     ) : (
         <div className="body">
-            <div className="filter">
-                <div className="search">
+            <div className="flex">
+                <div className="m-4 p-4">
                     <input type="text"
-                        className="search-box"
+                        className="border border-solid"
                         value={search}
                         onChange={(e) => {
                             setSearch(e.target.value)
                         }} />
-                    <button className="search-btn"
+                    <button className="px-6 m-3 cursor-pointer bg-green-100 rounded-b-md"
                         onClick={handleSearch}
-                    >Search</button>
+                    >🔍︎ Search</button>
                 </div>
-                <button className="filter-btn" onClick={handleTopRatedRestaurants}>Top Rated Restaurants</button>
+                <div className="m-4 p-4">
+                    <button className="px-6 m-3 bg-gray-100 rounded cursor-pointer "
+                        onClick={handleTopRatedRestaurants}>
+                        ⭐Top Rated Restaurants</button>
+                </div>
+
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 {filteredResList.map(res => (
                     <Link className="res-card-link" key={res.info.id} to={`/restaurants/${res.info.id}`}>
                         <RestaurantCard
