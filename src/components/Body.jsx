@@ -1,34 +1,16 @@
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
-import { RESTAURANT_LIST } from "../utils/constants";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import useFetchRestaurantList from "../utils/useFetchRestaurantList";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
-
-    const [resList, setResList] = useState([]);
-    const [filteredResList, setFilteredResList] = useState([]);
     const [search, setSearch] = useState("");
 
-    useEffect(() => {
-        fetchData();
-    }, [])
+    const { resList, filteredResList, setFilteredResList } = useFetchRestaurantList();
 
-    const fetchData = async () => {
-        try {
-            const response = await fetch(RESTAURANT_LIST);
-
-            const json = await response.json();
-            const restaurants = json?.data?.data?.cards?.[1].card?.card?.gridElements?.infoWithStyle?.restaurants
-
-            setResList(restaurants);
-            setFilteredResList(restaurants);
-
-        } catch (error) {
-            console.error(error);
-        }
-
-    }
+    const onlineStatus = useOnlineStatus();
 
     const handleTopRatedRestaurants = () => {
         const filteredList = resList.filter(res => res.info.avgRating > 4.5)
@@ -39,6 +21,10 @@ const Body = () => {
         const searchResult = resList.filter((res) => res.info.name.toLowerCase().includes(search.toLowerCase()));
         setFilteredResList(searchResult);
     }
+
+    if (onlineStatus === false) return (
+        <h1>Looks like you are offline...Check your network connection!!!</h1>
+    )
 
     return resList.length === 0 ? (
         <ShimmerUI />
